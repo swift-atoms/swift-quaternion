@@ -2,10 +2,9 @@
 
 Use this package when you need quaternions: the Hamilton product, the conjugate, the norm and the inverse, and above all unit quaternions as rotations of space that compose without drift into shear and that interpolate at an even angular rate. Start from `Quaternion<Scalar>`. To turn a rotation into its 3 × 3 matrix and back, enable the `Quaternion` trait of swift-matrix: `Matrix<3, 3, Scalar>(quaternion)` and `Quaternion(matrix)`. For a rotation recorded as steps in coordinate planes, use swift-rotation.
 
-A unit quaternion `cos(θ/2) + sin(θ/2)(n.x i + n.y j + n.z k)` is the rotation by θ about the unit axis n. `q` and `-q` are the same rotation.
-
 ## Laws
 
+- A unit quaternion `cos(θ/2) + sin(θ/2)(n.x i + n.y j + n.z k)` is the rotation by θ about the unit axis n. `q` and `-q` are the same rotation.
 - `multiplied(by:)` is the Hamilton product: `i · i = j · j = k · k = i · j · k = -1`. It is associative, not commutative, and `identity` is neutral on both sides. As rotations, `a.multiplied(by: b)` turns by `b` first and then by `a`, as the product of their matrices does.
 - `conjugate` negates the imaginary parts; for a unit quaternion it is the inverse rotation. `inverse` is the conjugate over the squared norm, so `q · q.inverse` and `q.inverse · q` are 1 up to rounding. `normalized` divides by `norm`; zero has no direction and gives NaN parts.
 - Equality and hashing compare the four parts exactly: `q` and `-q` are different quaternions though the same rotation.
