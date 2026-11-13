@@ -1,0 +1,7 @@
+description: "Quaternions for Swift: the Hamilton product, and unit quaternions as rotations of space with spherical interpolation at an even angular rate."
+topics:
+  - primitives
+  - geometry
+homepage: "https://swift-institute.org"
+readme:
+  family: E
